@@ -9,27 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('m_user', function (Blueprint $table) {
-            $table->id('user_id');
+            $table->bigIncrements('user_id');
             $table->unsignedBigInteger('level_id');
             $table->string('username', 20);
             $table->string('nama', 100);
-            $table->string('password');
+            $table->string('password', 255); // Pastikan typo 'password' sudah diperbaiki
             $table->timestamps();
-
-            $table->foreign('level_id')->references('level_id')->on('m_level');
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        Schema::table('m_user', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('m_user');
     }
 };
