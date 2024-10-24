@@ -23,13 +23,22 @@ class UserController extends Controller
 
         $activeMenu = 'user'; // set menu yang sedang aktif
 
-        return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu]);
+        $level = LevelModel::all();
+        return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level, 'activeMenu' => $activeMenu]);
     }
+
+
     // Ambil data user dalam bentuk json untuk datatables
 public function list(Request $request)
 {
 $users = UserModel::select('user_id', 'username', 'nama', 'level_id')
 ->with('level');
+
+// Filter data user berdasarkan level_id
+if ($request->level_id) {
+    $users->where('level_id', $request->level_id);
+}
+
 
 return DataTables::of($users)
  // menambahkan kolom index / no urut (default nama kolom: DT_RowIndex)
@@ -47,6 +56,8 @@ return $btn;
 ->rawColumns(['aksi']) // memberitahu bahwa kolom aksi adalah html
 ->make(true);
 }
+
+
 // Menampilkan halaman form tambah user
 public function create()
 {
@@ -69,6 +80,7 @@ public function create()
         'activeMenu' => $activeMenu
     ]);
 }
+
 
 // Menyimpan data user baru
 public function store(Request $request)
@@ -94,6 +106,7 @@ public function store(Request $request)
     return redirect('/user')->with('success', 'Data user berhasil disimpan');
 }
 
+
 // Menampilkan detail user
 public function show(string $id)
 {
@@ -117,6 +130,7 @@ public function show(string $id)
         'activeMenu' => $activeMenu
     ]);
 }
+
 
 // Menampilkan halaman form edit user
 public function edit(string $id)
@@ -165,6 +179,7 @@ public function update(Request $request, string $id)
 
     return redirect('/user')->with('success', 'Data user berhasil diubah');
 }
+
 
 // Menghapus data user
 public function destroy(string $id)
