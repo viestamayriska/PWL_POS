@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+use Faker\Factory as Faker;
 
 class SupplierSeeder extends Seeder
 {
@@ -13,26 +13,26 @@ class SupplierSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
+        $faker = Faker::create();
 
         $data = [
             [
-                'id' => '1',
-                'created_at' => $now,
-                'updated_at' => $now,
+                'supplier_kode' => $faker->unique()->lexify('SUP????'), // Random supplier code
+                'supplier_nama' => $faker->company, // Random company name
+                'supplier_alamat' => $faker->address, // Random address
             ],
             [
-                'id' => '2',
-                'created_at' => $now,
-                'updated_at' => $now,
+                'supplier_kode' => $faker->unique()->lexify('SUP????'),
+                'supplier_nama' => $faker->company,
+                'supplier_alamat' => $faker->address,
             ],
             [
-                'id' => '3',
-                'created_at' => $now,
-                'updated_at' => $now,
+                'supplier_kode' => $faker->unique()->lexify('SUP????'),
+                'supplier_nama' => $faker->company,
+                'supplier_alamat' => $faker->address,
             ],
         ];
 
-        DB::table('m_supplier')->insert($data);
+        DB::table('m_supplier')->insert($data); // Insert data into the m_supplier table
     }
 }

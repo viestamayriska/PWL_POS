@@ -17,27 +17,62 @@ class KategoriSeeder extends Seeder
 
         $data = [
             [
-                'id' => '1',
+                'kategori_kode' => 'SNK',
+                'kategori_nama' => 'Snack/Makanan Ringan',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => '2',
+                'kategori_kode' => 'MIN',
+                'kategori_nama' => 'Minuman',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => '3',
+                'kategori_kode' => 'OBT',
+                'kategori_nama' => 'Obat-Obatan',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => '4',
+                'kategori_kode' => 'PRL',
+                'kategori_nama' => 'Peralatan Rumah',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => '5',
+                'kategori_kode' => 'ELE',
+                'kategori_nama' => 'Elektronik',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'kategori_kode' => 'FAS',
+                'kategori_nama' => 'Fashion',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'kategori_kode' => 'KRP',
+                'kategori_nama' => 'Keripik',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'kategori_kode' => 'BKS',
+                'kategori_nama' => 'Buku',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'kategori_kode' => 'KLG',
+                'kategori_nama' => 'Kelengkapan Gaming',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'kategori_kode' => 'KRM',
+                'kategori_nama' => 'Kramik',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],

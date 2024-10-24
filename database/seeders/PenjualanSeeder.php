@@ -1,10 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+
 
 class PenjualanSeeder extends Seeder
 {
@@ -13,91 +12,79 @@ class PenjualanSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
-
         // $data = [
         //     [
+        //         'penjualan_id' => '001',
         //         'user_id' => 1,
-        //         'pembeli' => 'John Doe',
         //         'penjualan_kode' => 'PJ001',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Agus Setiawan',
+        //         'penjualan_tanggal' => '2024-09-01 10:30:00',
         //     ],
         //     [
+        //         'penjualan_id' => '002',
         //         'user_id' => 2,
-        //         'pembeli' => 'Jane Smith',
         //         'penjualan_kode' => 'PJ002',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Lestari Wulandari',
+        //         'penjualan_tanggal' => '2024-09-01 11:00:00',
         //     ],
         //     [
-        //         'user_id' => 1,
-        //         'pembeli' => 'Bob Johnson',
+        //         'penjualan_id' => '003',
+        //         'user_id' => 3,
         //         'penjualan_kode' => 'PJ003',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Siti Nurhaliza',
+        //         'penjualan_tanggal' => '2024-09-01 11:30:00',
         //     ],
         //     [
-        //         'user_id' => 3,
-        //         'pembeli' => 'Alice Williams',
+        //         'penjualan_id' => '004',
+        //         'user_id' => 1,
         //         'penjualan_kode' => 'PJ004',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Rahmat Hidayat',
+        //         'penjualan_tanggal' => '2024-09-02 09:15:00',
         //     ],
         //     [
+        //         'penjualan_id' => '005',
         //         'user_id' => 2,
-        //         'pembeli' => 'Chris Brown',
         //         'penjualan_kode' => 'PJ005',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Andi Susanto',
+        //         'penjualan_tanggal' => '2024-09-02 10:00:00',
         //     ],
         //     [
-        //         'user_id' => 1,
-        //         'pembeli' => 'Emma Davis',
+        //         'penjualan_id' => '006',
+        //         'user_id' => 3,
         //         'penjualan_kode' => 'PJ006',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'pembeli' => 'Nurul Fadilah',
+        //         'penjualan_tanggal' => '2024-09-02 11:45:00',
         //     ],
         //     [
-        //         'user_id' => 3,
-        //         'pembeli' => 'Michael Miller',
-        //         'penjualan_kode' => 'PJ007',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
-        //     ],
-        //     [
-        //         'user_id' => 2,
-        //         'pembeli' => 'Sophia Garcia',
-        //         'penjualan_kode' => 'PJ008',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
-        //     ],
-        //     [
+        //         'penjualan_id' => '007',
         //         'user_id' => 1,
-        //         'pembeli' => 'James Martinez',
-        //         'penjualan_kode' => 'PJ009',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'penjualan_kode' => 'PJ007',
+        //         'pembeli' => 'Ahmad Fauzi',
+        //         'penjualan_tanggal' => '2024-09-03 12:15:00',
         //     ],
         //     [
-        //         'user_id' => 3,
-        //         'pembeli' => 'Olivia Taylor',
-        //         'penjualan_kode' => 'PJ010',
-        //         'penjualan_tanggal' => $now,
-        //         'created_at' => $now,
-        //         'updated_at' => $now,
+        //         'penjualan_id' => '008',
+        //         'user_id' => 2,
+        //         'penjualan_kode' => 'PJ008',
+        //         'pembeli' => 'Dewi Sartika',
+        //         'penjualan_tanggal' => '2024-09-03 13:00:00',
         //     ],
-        // ];
-
-        // DB::table('t_penjualan')->insert($data);
+        //     [
+        //         'penjualan_id' => '009',
+        //         'user_id' => 3,
+        //         'penjualan_kode' => 'PJ009',
+        //         'pembeli' => 'Indra Lesmana',
+        //         'penjualan_tanggal' => '2024-09-03 14:30:00',
+        //     ],
+        //     [
+        //         'penjualan_id' => '010',
+        //         'user_id' => 1,
+        //         'penjualan_kode' => 'PJ010',
+        //         'pembeli' => 'Fathir Hamdani',
+        //         'penjualan_tanggal' => '2024-09-04 09:00:00',
+        //     ],
+            
+        //];
+   //
     }
 }
