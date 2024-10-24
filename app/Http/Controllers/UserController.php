@@ -10,27 +10,18 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Pastikan password ditetapkan dengan benar
+        // Hashing password and defining user details
         $data = [
             'level_id' => 2,
             'username' => 'manager_tiga',
             'nama' => 'Manager 3',
-            'password' => Hash::make('12345') // Hash password
+            'password' => Hash::make('12345')
         ];
 
-    // Coba untuk membuat pengguna baru
-    // UserModel::create($data);
-    // $data = UserModel::all();
-       //$user = UserModel::firstWhere('level_id', 1);
+        // Retrieve the count of users with level_id 2
+        $user = UserModel::where('level_id', 2)->count();
 
-    // $user = UserModel::findOr(1, ['username', 'nama'], function () {
-        // abort(404);
-    // }); 
-    //  $user = UserModel::findOrFail(1); 
-    // Mengambil data pengguna yang baru dibuat
-    $user = UserModel::where('username', 'manager9')->firstOrFail(); // Ambil pengguna berdasarkan username
-    
-       return view('user', ['data' => $user]);
+        // Pass data to the view
+        return view('user', ['data' => $user]);
     }
 }
-
