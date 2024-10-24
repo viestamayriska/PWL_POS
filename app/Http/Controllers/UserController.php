@@ -10,18 +10,18 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Hashing password and defining user details
-        $data = [
-            'level_id' => 2,
-            'username' => 'manager_tiga',
-            'nama' => 'Manager 3',
-            'password' => Hash::make('12345')
-        ];
+        $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
+            
+        );
 
-        // Retrieve the count of users with level_id 2
-        $user = UserModel::where('level_id', 2)->count();
-
-        // Pass data to the view
+        $user->save();
+        
         return view('user', ['data' => $user]);
-    }
+    }        
 }

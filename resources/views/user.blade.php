@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data User</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 10px;
-            text-align: left;
-        }
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        table {
-            margin: 0 auto;
-        }
-    </style>
-</head>
 <body>
     <h1>Data User</h1>
-    <table>
+    <table border="1" cellpadding="2" cellspacing="0">
         <tr>
-            <th>Jumlah Pengguna</th>
+            <td>ID</td>
+            <td>Username</td>
+            <td>Nama</td>
+            <td>ID Level Pengguna</td>
         </tr>
         <tr>
-            <td>{{ $data }}</td>
+            <td>{{ $data->user_id }}</td>
+            <td>{{ $data->username }}</td>
+            <td>{{ $data->nama }}</td>
+            <td>{{ $data->level_id }}</td>
         </tr>
     </table>
 </body>
-</html>
